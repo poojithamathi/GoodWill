@@ -1,0 +1,55 @@
+.volunteer-page {
+    padding: 50px;
+  }
+  
+  .activity-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+  }
+  
+  .activity-card {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    color: black; /* Text color */
+    transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
+  }
+  
+  .activity-card:hover {
+    transform: translateY(-5px); /* Move the card slightly upwards on hover */
+  }
+  
+  .activity-card h3 {
+    margin-top: 0;
+  }
+  
+  .bottom-section {
+    padding: 30px;
+  }
+  
+  .volunteer-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .volunteer-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect to the image */
+  }
+  

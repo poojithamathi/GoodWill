@@ -1,0 +1,73 @@
+/* HomePage.css */
+.homecard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .card-row {
+    display: flex;
+  }
+  
+
+.description-card {
+    flex: 1;
+    padding: 20px;
+    background-color: #fffefe; /* Example background color for the description card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: justify; /* Center text content */
+  }
+  
+  
+  .image-card {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff; /* Example background color for the image card */
+  }
+  
+  .image-card img {
+    max-width: 100%; /* Ensure the image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: "50%";
+  }
+  
+
+
+/* commitment-card */
+
+.commitment-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.card-row {
+  display: flex;
+}
+
+
+.commitment-description-card {
+  flex: 1;
+  padding: 20px;
+  background-color: #fffefe; /* Example background color for the description card */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: justify; /* Center text content */
+}
+
+
+.commitment-image-card {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff; /* Example background color for the image card */
+}
+
+.commitment-image-card img {
+  max-width: 100%; 
+  /* height: auto; Maintain aspect ratio */
+}

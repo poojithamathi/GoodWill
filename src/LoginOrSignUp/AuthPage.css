@@ -1,0 +1,148 @@
+.login-main {
+  background-image: url('../Assets/wesbitebg1.jpeg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  max-height: 700px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* background: linear-gradient(135deg, #b7d5b1, #c4b5ce); */
+  background-color: #c2baba;
+  /* opacity: 0.9; */
+  /* background: linear-gradient(180deg, #b96031, #ac7498); */
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container form div {
+  margin-top: 10px;
+}
+
+.login-container form label {
+  font-weight: bold;
+}
+
+.login-container form input[type='email'],
+.login-container form input[type='password'],
+.login-container form button[type='submit'],
+.login-container button {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.login-container form button[type='submit'],
+.login-container button {
+  /* background-color: #007bff; */
+  background:   linear-gradient(135deg, #1c4e12, #405f97);
+  color: #fff;
+  cursor: pointer;
+}
+
+.login-container form button[type='submit']:hover,
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+.login-container p {
+  margin-top: 15px;
+}
+
+.login-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* Existing styles */
+
+.password-input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.password-input-container input {
+  width: calc(100% - 30px); /* Adjusted width to accommodate the eye icon */
+  padding-right: 30px; /* Ensure space for the eye icon */
+}
+
+.eye-icon {
+  width: 15px;
+  height: 15px;
+  /* background-image: url('eye-icon.svg'); Replace with your eye icon image */
+  background-size: cover;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+}
+
+/* CSS */
+.google-signin-button {
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  /* background-color: #fff; */
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.google-signin-button:hover {
+  /* background-color: #f0f0f0; */
+}
+
+.google-signin-button img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* Adjust this value as needed */
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Adjust padding to create space for the icon */
+.input-container input {
+  padding:10px;
+  padding-left: 30px; /* Increase this value to create more space */
+  
+}
+.login-container form button[type='submit'],
+.login-container button {
+  margin-top: 15px;
+  padding:10px;
+}

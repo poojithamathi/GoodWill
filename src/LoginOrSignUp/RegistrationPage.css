@@ -1,0 +1,183 @@
+@media (max-width: 767px) {
+.about-section {
+  position: relative !important;
+  padding-top: 150px !important;
+  padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+  color: white !important;
+}
+}
+@media (max-width: 767px) {
+  .about-img {
+    padding-top: 0 !important;
+  }
+}
+#password-tooltip{
+  color: white;
+  display: flex;
+  font-size: 12px;
+   max-width: 340px;
+   background-color: #000000;
+   border-radius: 5px;
+   padding: 2px;
+   opacity: 90%;
+  right: 40px;
+  width: 100%;
+}
+#email-tooltip{
+  color: white;
+  display: flex;
+  font-size: 12px;
+   max-width: 310px;
+   background-color: #000000;
+   border-radius: 5px;
+   padding: 2px;
+   opacity: 90%;
+  right: 40px;
+  width: 100%;
+}
+.errormessages{
+  color: red;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+.right-side {
+  background-color: purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-main{
+  /* background-image: url('../Assets/bg4.jpeg'); */
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* z-index: -1;
+  position: relative; */
+}
+.register-container{
+  background-color: white;
+  display: flex;
+  border-radius: 2%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 150px;
+  margin-top: 100px;
+  /* padding: 20px; */
+}
+
+.registration-form{
+    margin: 20px ;
+    flex: 1;
+    padding: 20px;
+    background-color: #fffefe; /* Example background color for the description card */
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;
+    text-align: justify; /* Center text content */
+    width: 100%;
+    /* max-width: 400px; */
+}
+
+.registration-form h2 {
+  margin-bottom: 30px; 
+  font-size: 24px;
+}
+
+.registration-form .form-group {
+  margin-bottom: 30px;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 10px;
+
+}
+
+.registration-form input,
+.registration-form button {
+  width: 100%; 
+  padding: 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box; 
+}
+
+.registration-form button {
+  background-color: #007bff; 
+  color: #ffffff;
+  border: none; 
+  cursor: pointer; 
+  transition: background-color 0.3s;
+}
+
+.registration-form button:hover {
+  background-color: #0056b3; 
+}
+
+sup {
+  color: red;
+  top: -2px;
+  font-size: 95%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.signup-info{
+  flex: 1;
+  background: linear-gradient(135deg, #723b9d, #1b14a0);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.big-icon {
+  font-size: 2em; /* Adjust the size as needed */
+}
+
+.signup-info-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 10px;
+  /* background-color: #f8f9fa; */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  color: white;
+}
+
+.signup-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.signup-list {
+  list-style: none;
+  padding: 0;
+}
+
+.signup-list-item {
+  margin-bottom: 15px;
+}
+
+.signup-list-item::before {
+  content: '\2022'; /* Bullet character */
+  color: #007bff; /* Blue color */
+  font-size: 1.5em;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.signup-button:hover {
+  background-color: #0056b3;
+}
