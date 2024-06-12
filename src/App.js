@@ -7,6 +7,9 @@ import RegisterOrSignUp from './LoginOrSignUp/RegisterOrLogin'
 import Register from './LoginOrSignUp/UserRegistration'
 import Volunteer from './Volunteer/VolunteerPage'
 import ActivityDetails from "./Volunteer/ActivityDetailsPage";
+import Chatbot from "./Chatbot/Chatbot";
+import Login from './LoginOrSignUp/Login';
+
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 
@@ -32,10 +35,11 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/donate" component={DonationPage} />
           <Route path="/listings" component={Listings} />
-          <Route path="/registerorlogin" component={RegisterOrSignUp} />
+          <Route path="/registerorlogin" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/volunteer" component={Volunteer} />
           <Route path="/volunteer/*" component={ActivityDetails} />
+          <Route path="/chatroom" component={Chatbot} /> {/* Add the chatbot route */}
           <Redirect to="/" />
         </Switch>
         <Footer />

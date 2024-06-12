@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // If you're using React Router
 import './navbar.css';
-import logo from './Assets/hand.png';
 
 const Navbar = () => {
   return (
@@ -14,7 +13,7 @@ const Navbar = () => {
           <li><Link to="/about">About</Link></li>
           <li><Link to="/donate">Donate</Link></li>
           <li><Link to="/volunteer">Volunteer</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/chatroom">ChatRoom</Link></li>
           <li><Link to="/registerorlogin">Register/Login</Link></li>
         </ul>
       </div>

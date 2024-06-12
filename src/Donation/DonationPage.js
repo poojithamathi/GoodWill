@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './DonationPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faImage } from '@fortawesome/free-solid-svg-icons';
-// import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 function DonationPage() {
   const [description, setDescription] = useState('');
   const [image, setImage] = useState(null);
-  const [userLocation, setUserLocation] = useState(null);
+  const [userLocation, setUserLocation] = useState('');
+  const [coordinates, setCoordinates] = useState(null);
   const [distance, setDistance] = useState(null);
   const [pickup, setPickup] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -21,16 +22,17 @@ function DonationPage() {
     setImage(e.target.files[0]);
   };
 
-  // const handleLocationSelect = async (value) => {
-  //   try {
-  //     const results = await geocodeByAddress(value.label);
-  //     const coordinates = await getLatLng(results[0]);
-  //     setUserLocation(coordinates);
-  //   } catch (error) {
-  //     console.error('Error selecting location:', error);
-  //     setError('Error selecting location. Please try again.');
-  //   }
-  // };
+  const handleSelect = async (value) => {
+    try {
+      const results = await geocodeByAddress(value);
+      const coordinates = await getLatLng(results[0]);
+      setUserLocation(value);
+      setCoordinates(coordinates);
+    } catch (error) {
+      console.error('Error selecting location:', error);
+      setError('Error selecting location. Please try again.');
+    }
+  };
 
   const handlePickupChange = (e) => {
     setPickup(e.target.checked);
@@ -39,12 +41,12 @@ function DonationPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (!userLocation) {
+      if (!coordinates) {
         setError('Please select a valid location.');
         return;
       }
-      const targetCoordinates = { latitude: 37.7749, longitude: -122.4194 }; // Example coordinates for a target location
-      const calculatedDistance = calculateDistance(userLocation, targetCoordinates);
+      const targetCoordinates = { lat: 37.7749, lng: -122.4194 }; // Example coordinates for a target location
+      const calculatedDistance = calculateDistance(coordinates, targetCoordinates);
       setDistance(calculatedDistance.toFixed(2));
       setSubmitted(true);
     } catch (error) {
@@ -55,8 +57,8 @@ function DonationPage() {
 
   const calculateDistance = (coords1, coords2) => {
     const radlat1 = (Math.PI * coords1.lat) / 180;
-    const radlat2 = (Math.PI * coords2.latitude) / 180;
-    const theta = coords1.lng - coords2.longitude;
+    const radlat2 = (Math.PI * coords2.lat) / 180;
+    const theta = coords1.lng - coords2.lng;
     const radtheta = (Math.PI * theta) / 180;
     let dist =
       Math.sin(radlat1) * Math.sin(radlat2) +
@@ -79,11 +81,28 @@ function DonationPage() {
           <div className="form-group">
             <label htmlFor="image">Upload Image:</label>
             <input type="file" id="image" onChange={handleImageChange} accept="image/*"/>
-            {/* <FontAwesomeIcon icon={faImage} className="upload-icon" /> */}
+            <FontAwesomeIcon icon={faImage} className="upload-icon" />
           </div>
           <div className="form-group">
             <label htmlFor="location">Your Location:</label>
-            {/* <PlacesAutocomplete value={userLocation} onChange={setUserLocation} onSelect={handleLocationSelect} /> */}
+            <PlacesAutocomplete value={userLocation} onChange={setUserLocation} onSelect={handleSelect}>
+              {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                <div>
+                  <input {...getInputProps({ placeholder: 'Search Places ...' })} />
+                  <div>
+                    {loading && <div>Loading...</div>}
+                    {suggestions.map(suggestion => {
+                      const style = suggestion.active ? { backgroundColor: '#a8dadc', cursor: 'pointer' } : { backgroundColor: '#ffffff', cursor: 'pointer' };
+                      return (
+                        <div {...getSuggestionItemProps(suggestion, { style })}>
+                          {suggestion.description}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </PlacesAutocomplete>
           </div>
           <div className="form-group">
             <label>Distance to Drop-off Point:</label>

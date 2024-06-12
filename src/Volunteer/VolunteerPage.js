@@ -1,5 +1,5 @@
 // VolunteerPage.js
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import './VolunteerPage.css';
 import donateFood from '../Assets/food-distribution.jpg';
 import donateClothes from '../Assets/donate-clothes.jpeg';
@@ -8,10 +8,21 @@ import donateMedicalSupplies from '../Assets/donate-medical-supplies.jpeg';
 import donateHygieneKits from '../Assets/hygiene-kits.jpeg';
 import ActivityDetailsPage from './ActivityDetailsPage';
 
+import {
+  query,
+  collection,
+  orderBy,
+  onSnapshot,
+  limit,
+  getDocs
+} from "firebase/firestore";
+import { firestore } from "../firebase";
+
 const VolunteerPage = () => {
   const [showActivityModal, setShowActivityModal] = useState(false); // State to control the visibility of the activity modal
   const [selectedActivity, setSelectedActivity] = useState(null); // State to store the selected activity
 
+  // const [activities,setActivities] = useState([]); // State to store the activities [title, description, imageUrl
   const activities = [
     {
       id: 1,
@@ -45,6 +56,19 @@ const VolunteerPage = () => {
     },
   ];
 
+
+
+  // useEffect(() => {
+  //   const fetchActivities = async () => {
+  //     const activityCollection = collection(firestore, 'activities');
+  //     const snapshot = await getDocs(activityCollection);
+  //     const fetchedActivities = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  //     setActivities(fetchedActivities);
+  //   };
+
+  //   fetchActivities();
+  // }, []);
+
   // Function to handle clicking on the "Volunteer" button
   const handleVolunteerClick = (activity) => {
     setSelectedActivity(activity);
@@ -62,7 +86,7 @@ const VolunteerPage = () => {
               <p>{activity.description}</p>
             </div>
             <div className="bottom-section">
-              <img src={activity.imageUrl} alt={activity.title} />
+              <img src={`${activity.imageUrl}`} alt={activity.title} />
               <button onClick={() => handleVolunteerClick(activity)} className="volunteer-btn">Volunteer</button>
             </div>
           </div>
